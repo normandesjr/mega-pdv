@@ -2,14 +2,16 @@
   "name": "thrust-app",
   "version": "1.0",
   "dependencies": {
-    "bitcodes":  [
+    "bitcodes": [
       "thrust-bitcodes/http",
       "thrust-bitcodes/filesystem",
       "thrust-bitcodes/database",
-      "thrust-bitcodes/etl"
+      "thrust-bitcodes/etl",
+      "authentication"
     ],
     "jars": [
-      "org.postgresql:postgresql:42.2.1"
+      "org.postgresql:postgresql:42.2.1",
+      "com.google.guava:guava:24.0-jre"
     ]
   }
 }

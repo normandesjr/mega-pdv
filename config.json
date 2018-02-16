@@ -6,6 +6,15 @@
     "urlConnection": "jdbc:postgresql://localhost:5432/mega_pdv",
     "userName": "mega_pdv",
     "password": "mega_pdv"
+  },
+  "authentication": {
+    "notAuthenticatedUrls": [
+      "/@auth/login",
+      "/@auth/logout"
+    ]
+  },
+  "jwt": {
+    "jwsKey": "abcdefgh12345678"
   }
 
 }
