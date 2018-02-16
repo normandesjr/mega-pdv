@@ -1,9 +1,15 @@
 {
   "name": "thrust-app",
   "version": "1.0",
-  "dependencies": [
-    "thrust-bitcodes/http",
-    "thrust-bitcodes/filesystem",
-    "thrust-bitcodes/database"
-  ]
+  "dependencies": {
+    "bitcodes":  [
+      "thrust-bitcodes/http",
+      "thrust-bitcodes/filesystem",
+      "thrust-bitcodes/database",
+      "thrust-bitcodes/etl"
+    ],
+    "jars": [
+      "org.postgresql:postgresql:42.2.1"
+    ]
+  }
 }
