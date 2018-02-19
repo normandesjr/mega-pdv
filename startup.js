@@ -4,7 +4,7 @@ let auth = require('authentication')
 
 router.addMiddleware(auth)
 
-let routers = require('./config/router/routers')
-routers.registrar(router)
+let routes = require('./config/router/routes')
+routes.registrar(router)
 
 server.createServer(8778, router)

@@ -1,7 +1,7 @@
-let dbm = require('database')
+const dbm = require('database')
 
-let dbConfig = getBitcodeConfig('database')()
-let db = dbm.createDbInstance(dbConfig)
+const dbConfig = getBitcodeConfig('database')()
+const db = dbm.createDbInstance(dbConfig)
 
 function pesquisar (filtro) {
   return db.select('select * from produto')

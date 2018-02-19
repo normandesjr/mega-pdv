@@ -1,5 +1,6 @@
-let produtoDAO = require('./dao/produtoDAO')
-let importadorProduto = require('./etl/importadorProduto')
+const produtoDAO = require('./dao/produtoDAO')
+const importadorProduto = require('./etl/importadorProduto')
+const HttpStatus = require('./util/HttpStatus')
 
 function pesquisar (params, request, response) {
   response.json(produtoDAO.pesquisar())
@@ -7,12 +8,12 @@ function pesquisar (params, request, response) {
 
 function salvar (params, request, response) {
   produtoDAO.salvar(params)
-  response.status = 201
+  response.status = HttpStatus.CREATED
 }
 
 function remover (params, request, response) {
   produtoDAO.remover(params.id)
-  response.status = 204
+  response.status = HttpStatus.NOT_FOUND
 }
 
 function atualizar (params, request, response) {
@@ -20,8 +21,12 @@ function atualizar (params, request, response) {
 }
 
 function importar (params, request, response) {
-  let planilhaAnexa = request.httpRequest.getPart('file')
-  importadorProduto.importar(planilhaAnexa)
+  const planilhaAnexa = request.httpRequest.getPart('file')
+  try {
+    importadorProduto.importar(planilhaAnexa)
+  } catch (e) {
+    response.json({message: e.mensagem}, HttpStatus.BAD_REQUEST)
+  }
 }
 
 exports = {

@@ -1,7 +1,7 @@
-let dbm = require('database')
+const dbm = require('database')
 
-let dbConfig = getBitcodeConfig('database')()
-let db = dbm.createDbInstance(dbConfig)
+const dbConfig = getBitcodeConfig('database')()
+const db = dbm.createDbInstance(dbConfig)
 
 function pesquisarPorNomeESenha (username, password) {
   return db.execute('SELECT * FROM usuario WHERE username = :username AND password = :password',
