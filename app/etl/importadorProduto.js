@@ -1,17 +1,11 @@
 const etl = require('etl')
 const produtoDAO = require('../dao/produtoDAO')
+const planilhaValidator = require('../util/planilhaValidator')
 
 function importar (planilhaAnexa) {
-  validarTipoArquivo(planilhaAnexa)
+  planilhaValidator.validarTipoArquivo(planilhaAnexa.submittedFileName)
   const planilhaEmDisco = salvarPlanilhaEmDisco(planilhaAnexa)
   processarPlanilha(planilhaEmDisco)
-}
-
-function validarTipoArquivo (planilhaAnexa) {
-  const nomeArquivo = planilhaAnexa.submittedFileName
-  if (!nomeArquivo.endsWith('xlsx')) {
-    throw new ImportacaoException('O tipo do arquivo deve ser xlsx')
-  }
 }
 
 function salvarPlanilhaEmDisco (planilhaAnexa) {
@@ -33,10 +27,6 @@ function processarPlanilha (planilhaEmDisco) {
       }
       produtoDAO.salvar(produto)
     })
-}
-
-function ImportacaoException (mensagem) {
-  this.mensagem = mensagem
 }
 
 exports = {

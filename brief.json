@@ -7,7 +7,8 @@
       "thrust-bitcodes/filesystem",
       "thrust-bitcodes/database",
       "thrust-bitcodes/etl",
-      "authentication"
+      "authentication",
+      "majesty"
     ],
     "jars": [
       "org.postgresql:postgresql:42.2.1",
