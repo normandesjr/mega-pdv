@@ -1,3 +1,3 @@
-const planilhaValidatorTest = require('./test/planilhaValidatorTest')
+const planilhaValidatorTest = require('./test/planilhaValidator.test')
 
 planilhaValidatorTest.run()
