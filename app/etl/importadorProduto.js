@@ -1,6 +1,6 @@
 const etl = require('etl')
 const produtoDAO = require('../dao/produtoDAO')
-const planilhaValidator = require('../util/planilhaValidator')
+const planilhaValidator = require('../validator/planilhaValidator')
 
 function importar (planilhaAnexa) {
   planilhaValidator.validarTipoArquivo(planilhaAnexa.submittedFileName)

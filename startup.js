@@ -1,10 +1,13 @@
-let server = require('http')
-let router = require('router')
-let auth = require('authentication')
+const server = require('http')
+const router = require('router')
+const auth = require('authentication')
 
 router.addMiddleware(auth)
 
-let routes = require('./config/router/routes')
+const routes = require('./routes/index')
 routes.registrar(router)
+
+const ha = require('./app/util/hashingUtil')
+show(ha.gerarHash('admin'))
 
 server.createServer(8778, router)

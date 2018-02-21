@@ -1,5 +1,5 @@
 const majesty = require('majesty')
-const planilhaValidator = require('../app/util/planilhaValidator')
+const planilhaValidator = require('../app/validator/planilhaValidator')
 
 function run () {
   const res = majesty.run(exec)
