@@ -1,6 +1,6 @@
 const auth = require('authentication')
 const usuarioDAO = require('./dao/usuarioDAO')
-const hashingUtil = require('./util/hashingUtil')
+const hashingUtil = require('./util/HashingUtil')
 const HttpStatus = require('./util/HttpStatus')
 
 function login (params, request, response) {

@@ -4,10 +4,7 @@ const auth = require('authentication')
 
 router.addMiddleware(auth)
 
-const routes = require('./routes/index')
+const routes = require('./routes')
 routes.registrar(router)
-
-const ha = require('./app/util/hashingUtil')
-show(ha.gerarHash('admin'))
 
 server.createServer(8778, router)
