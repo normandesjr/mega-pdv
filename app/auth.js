@@ -4,8 +4,6 @@ const hashingUtil = require('./util/HashingUtil')
 const HttpStatus = require('./util/HttpStatus')
 
 function login (params, request, response) {
-  console.log(params);
-
   const senhaEmHash = hashingUtil.gerarHash(params.password)
   const usuario = usuarioDAO.pesquisarPorNomeESenha(params.username, senhaEmHash)
 
