@@ -1,0 +1,147 @@
+{
+	"variables": [],
+	"info": {
+		"name": "MegaPDV",
+		"_postman_id": "200d3abd-7053-5b94-279e-27c21f84b45e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Teste simples",
+			"request": {
+				"url": "http://localhost:8778/app/test/hello",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"admin\", \"password\": \"admin\"}"
+				},
+				"description": "Teste simples de requisição em uma rota padrão do thrust."
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"url": "http://localhost:8778/@auth/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"admin\", \"password\": \"admin\"}"
+				},
+				"description": "Login na aplicação"
+			},
+			"response": []
+		},
+		{
+			"name": "Listar produtos",
+			"request": {
+				"url": "http://localhost:8778/produtos",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Criar produto",
+			"request": {
+				"url": "http://localhost:8778/produtos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"nome\": \"Sabao\", \"descricao\": \"Sabao em Pó\", \"preco\": 2.50}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar produto",
+			"request": {
+				"url": "http://localhost:8778/produtos",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"preco\": 6, \"id\": 1}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar produto",
+			"request": {
+				"url": "http://localhost:8778/produtos",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": 1}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Importar produtos",
+			"request": {
+				"url": "http://localhost:8778/produtos/importacao",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"description": "",
+							"type": "file",
+							"src": "tabela-produtos.xlsx",
+							"value": ""
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
