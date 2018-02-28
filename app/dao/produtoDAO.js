@@ -1,6 +1,6 @@
 const dbm = require('database')
 
-const dbConfig = getBitcodeConfig('database')()
+const dbConfig = getConfig().database
 const db = dbm.createDbInstance(dbConfig)
 
 function pesquisar (filtro) {
